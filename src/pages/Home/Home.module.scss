@@ -1,0 +1,136 @@
+.home {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  min-height: 100vh;
+
+  background: var(--background);
+}
+
+.containerSearch {
+  display: flex;
+  margin-top: 10px;
+  width: 90%;
+
+  color: var(--text-primary);
+}
+
+.container {
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  background: var(--background);
+  flex-direction: column;
+}
+
+.negative {
+  color: #e15241;
+}
+
+.positive {
+  color: #4eaf0a;
+}
+
+.table {
+  margin-top: 20px;
+  border: 1px solid var(--text-primary);
+  border-radius: 5px;
+  color: var(--text-primary);
+  overflow-y: auto;
+
+  p {
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  span {
+    font-size: 14px;
+  }
+}
+
+.nameContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nameCoin {
+  display: flex;
+  width: 25px;
+
+  p:first-child {
+    margin-left: 12px;
+  }
+}
+
+.name {
+  display: none;
+}
+
+.imageCoin {
+  width: 20px;
+  height: 20px;
+}
+
+.paginator {
+  display: flex;
+  width: 100%;
+  color: var(--text-primary);
+}
+
+@media screen and (min-width: 839px) {
+  .home {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    min-height: 100vh;
+
+    background: var(--background);
+  }
+
+  .container {
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    background: var(--background);
+    flex-direction: column;
+  }
+
+  .table {
+    margin-top: 20px;
+    border: 1px solid var(--text-primary);
+    border-radius: 5px;
+    color: var(--text-primary);
+    overflow-y: inherit;
+
+    p {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    span {
+      font-size: 14px;
+    }
+  }
+
+  .nameContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nameCoin {
+    display: flex;
+    width: 200px;
+
+    p {
+      margin-left: 12px;
+    }
+  }
+
+  .name {
+    display: flex;
+  }
+}
