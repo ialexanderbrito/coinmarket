@@ -1,0 +1,52 @@
+.header {
+  display: flex;
+  background: var(--background-content);
+  width: 100%;
+  height: 3.5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.logo {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+}
+
+strong {
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+.mode {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 50%;
+}
+
+.containerAutoComplete {
+  display: flex;
+  width: 75%;
+}
+
+.searchContainer {
+  display: flex;
+  width: 90%;
+  color: var(--text-primary);
+
+  justify-content: space-around;
+}
+
+.icon {
+  background: var(--background-content);
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
