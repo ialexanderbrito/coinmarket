@@ -1,0 +1,196 @@
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--background);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background: var(--background);
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+
+  color: var(--text-primary);
+}
+
+.infoContent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  flex-direction: column;
+
+  h1 {
+    font-size: 32px;
+    font-weight: bold;
+  }
+}
+
+.infoCrypto {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+.infoPrice {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+  }
+}
+
+p {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.negative {
+  color: #e15241 !important;
+}
+
+.positive {
+  color: #4eaf0a !important;
+}
+
+.percentage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+
+  color: #e15241;
+}
+
+.containerChart {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  width: 95%;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+
+  color: var(--text-primary);
+}
+
+.title {
+  display: flex;
+  margin: 12px;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.converter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.trending {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 24px;
+  padding: 5px;
+}
+
+.trendContainer {
+  display: flex;
+  width: 100%;
+  border: 1px solid rgb(138, 43, 226);
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+
+  color: var(--text-primary);
+}
+
+.trendText {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (min-width: 839px) {
+  .infoContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+
+    color: var(--text-primary);
+  }
+
+  .infoContent {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 40%;
+    height: 90px;
+    flex-direction: column;
+
+    h1 {
+      font-size: 22px;
+      font-weight: bold;
+    }
+  }
+
+  .filter {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 12px;
+
+    color: var(--text-primary);
+  }
+
+  .trending {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .converter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+}
