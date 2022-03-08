@@ -1,0 +1,70 @@
+:root {
+  --background: #f6f8ff;
+  --background-initial: #f6f8ff;
+  --background-content: #fefefe;
+  --text-primary: #6b46c1;
+  --text-secondary: #2b3442;
+  --lm-shadow-active: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  --lm-shadow-inactive: 0px 16px 30px -10px rgba(0, 0, 0, 0.2);
+  --lm-icon-bg: brightness(100%);
+  --btn: #0079ff;
+  --btn-hover: #60abff;
+}
+
+[data-theme="dark"] {
+  --background: #0d1232;
+  --background-content: #0e163a;
+  --text-primary: #fff;
+  --text-secondary: #fff;
+  --lm-shadow-xl: rgba(70, 88, 109, 0.15);
+  --lm-icon-bg: brightness(1000%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+body {
+  color: var(--text-color);
+  background: var(--background-initial) !important;
+}
+
+.wrapper {
+  display: flex;
+}
+
+::-webkit-input-placeholder {
+  text-transform: initial;
+}
+
+:-moz-placeholder {
+  text-transform: initial;
+}
+
+::-moz-placeholder {
+  text-transform: initial;
+}
+
+:-ms-input-placeholder {
+  text-transform: initial;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #aaaaaa;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #bbbbbb;
+}
