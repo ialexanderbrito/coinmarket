@@ -236,7 +236,12 @@ export function Home() {
                   w="full"
                   p={4}
                 >
-                  <Select w={20} ml={0} onChange={handlePageSizeChange}>
+                  <Select
+                    w={20}
+                    ml={0}
+                    onChange={handlePageSizeChange}
+                    color={theme === 'light' ? 'gray.700' : 'gray.500'}
+                  >
                     <option value="10">10</option>
                     <option value="25">25</option>
                     <option value="50">50</option>
