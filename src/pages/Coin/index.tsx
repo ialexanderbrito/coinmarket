@@ -241,7 +241,6 @@ export function Coin() {
                 type="number"
                 placeholder="0"
                 w={150}
-                color="#fff"
                 value={crypto}
                 onChange={handleChangeCrypto}
               />
@@ -272,7 +271,6 @@ export function Coin() {
                 type="number"
                 placeholder="0"
                 w={150}
-                color="#fff"
                 value={gold}
                 onChange={handleChangeGold}
               />
