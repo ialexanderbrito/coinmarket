@@ -40,13 +40,15 @@ export function Header() {
 
   return (
     <div className={styles.header}>
-      <img
-        aria-hidden="true"
-        src={logoImg}
-        alt="Logo"
-        className={styles.logo}
-        onClick={() => navigate('/')}
-      />
+      <div className={styles.containerLogo} onClick={() => navigate('/')}>
+        <img
+          aria-hidden="true"
+          src={logoImg}
+          alt="Logo"
+          className={styles.logo}
+        />
+        <h1>CryptoMarket</h1>
+      </div>
 
       <div className={styles.mode}>
         <div className={styles.searchContainer}>

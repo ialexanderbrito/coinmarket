@@ -8,6 +8,17 @@
   padding: 0 2rem;
 }
 
+.containerLogo {
+  align-items: center;
+  justify-content: space-around;
+  width: 15%;
+  cursor: pointer;
+
+  h1 {
+    display: none;
+  }
+}
+
 .logo {
   cursor: pointer;
   width: 32px;
@@ -25,6 +36,7 @@ strong {
   justify-content: space-between;
 
   width: 90%;
+  margin-left: 14px;
 }
 
 .containerAutoComplete {
@@ -58,6 +70,19 @@ strong {
     justify-content: space-between;
 
     width: 50%;
-    margin-left: 14px;
+  }
+
+  .containerLogo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 15%;
+    cursor: pointer;
+
+    h1 {
+      display: flex;
+      color: var(--text-primary);
+      font-weight: bold;
+    }
   }
 }
