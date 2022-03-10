@@ -1,7 +1,8 @@
 /* eslint-disable react/no-children-prop */
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 import { Helmet } from 'react-helmet';
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { BiTransfer } from 'react-icons/bi';
 import { RiArrowUpSFill, RiArrowDownSFill } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';
@@ -23,12 +24,14 @@ import usaFlag from 'assets/usa.png';
 import cx from 'classnames';
 import { CryptoTrendingItemResponse } from 'types/ICrypto';
 
+import { ButtonSave } from 'components/ButtonSave';
 import { Header } from 'components/Header';
 
 import { useHeader } from 'contexts/Header';
 import { useTheme } from 'contexts/Theme';
 
 import { useCoin } from 'hooks/useCoin';
+import { useSaved } from 'hooks/useSaved';
 
 import { formatBRL } from 'utils/formatBRL';
 import { formatPercent2Decimal } from 'utils/formatPercent';
@@ -57,10 +60,16 @@ export function Coin() {
     buscaTrending,
     dataChart,
     optionsChart,
+    crypto,
+    gold,
+    setCrypto,
+    setGold,
+    handleChangeCrypto,
+    handleChangeGold,
   } = useCoin();
 
-  const [crypto, setCrypto] = useState(0);
-  const [gold, setGold] = useState(0);
+  const { cryptoFavorites, saveCryptoFavorite, verificarSeExisteNaLista } =
+    useSaved();
 
   useEffect(() => {
     setIsLoading(true);
@@ -96,25 +105,7 @@ export function Coin() {
     setGold(0);
   }, [currency]);
 
-  function handleChangeCrypto(event: any) {
-    setCrypto(event.target.value);
-
-    if (currency === 'BRL') {
-      setGold(event.target.value * coin?.market_data?.current_price.brl);
-    } else {
-      setGold(event.target.value * coin?.market_data?.current_price.usd);
-    }
-  }
-
-  function handleChangeGold(event: any) {
-    setGold(event.target.value);
-
-    if (currency === 'BRL') {
-      setCrypto(event.target.value / coin?.market_data?.current_price.brl);
-    } else {
-      setCrypto(event.target.value / coin?.market_data?.current_price.usd);
-    }
-  }
+  useEffect(() => {}, [cryptoFavorites]);
 
   return (
     <>
@@ -140,6 +131,20 @@ export function Coin() {
                 <h2>
                   {coin?.name} ({coin?.symbol?.toUpperCase()})
                 </h2>
+                <div
+                  style={{
+                    cursor: 'pointer',
+                  }}
+                  onClick={() => {
+                    saveCryptoFavorite(coin);
+                  }}
+                >
+                  {verificarSeExisteNaLista(coin?.id) ? (
+                    <AiFillStar size={20} color="#ffd700" />
+                  ) : (
+                    <AiOutlineStar size={20} color="#ffd700" />
+                  )}
+                </div>
               </div>
 
               <div className={styles.infoPrice}>
@@ -329,6 +334,8 @@ export function Coin() {
             )}
           </div>
         </div>
+
+        <ButtonSave />
       </div>
     </>
   );
