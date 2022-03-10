@@ -22,6 +22,7 @@ import {
 import cx from 'classnames';
 import { CryptoResponse } from 'types/ICrypto';
 
+import { ButtonSave } from 'components/ButtonSave';
 import { Header } from 'components/Header';
 
 import { useHeader } from 'contexts/Header';
@@ -250,6 +251,8 @@ export function Home() {
                 </Container>
               </Paginator>
             </div>
+
+            <ButtonSave />
           </div>
         )}
       </div>
