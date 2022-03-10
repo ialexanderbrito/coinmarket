@@ -1,0 +1,20 @@
+.buttonSave {
+  position: fixed;
+  right: 40px;
+  bottom: 10px;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  background: var(--button-save);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    transition: 0.4s;
+    filter: brightness(80%);
+  }
+}
