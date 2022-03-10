@@ -91,7 +91,13 @@ export function Header() {
           </div>
 
           <div>
-            <Select size="sm" onChange={handleCurrency} value={currency}>
+            <Select
+              size="sm"
+              focusBorderColor="purple.600"
+              onChange={handleCurrency}
+              value={currency}
+              color={theme === 'light' ? 'gray.700' : 'gray.500'}
+            >
               <option value="BRL">BRL</option>
               <option value="USD">USD</option>
             </Select>
