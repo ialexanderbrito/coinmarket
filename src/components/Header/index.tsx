@@ -56,7 +56,13 @@ export function Header() {
             <AutoComplete
               openOnFocus
               emptyState={
-                <Text fontSize="sm" color="gray.500">
+                <Text
+                  fontSize="sm"
+                  color="gray.500"
+                  style={{
+                    marginLeft: '10px',
+                  }}
+                >
                   Nenhum resultado encontrado
                 </Text>
               }
