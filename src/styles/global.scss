@@ -9,6 +9,8 @@
   --lm-icon-bg: brightness(100%);
   --btn: #0079ff;
   --btn-hover: #60abff;
+
+  --button-save: #6b46c1;
 }
 
 [data-theme="dark"] {
@@ -18,6 +20,8 @@
   --text-secondary: #fff;
   --lm-shadow-xl: rgba(70, 88, 109, 0.15);
   --lm-icon-bg: brightness(1000%);
+
+  --button-save: #6b46c1;
 }
 
 * {
