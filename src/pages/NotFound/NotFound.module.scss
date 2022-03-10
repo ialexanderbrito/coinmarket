@@ -1,0 +1,23 @@
+.home {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+
+  background: var(--background);
+
+  h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--text-primary);
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 14px;
+    color: var(--text-secondary);
+  }
+}

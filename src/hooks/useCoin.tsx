@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { CryptoChartResponse } from 'types/ICrypto';
 
@@ -8,6 +8,7 @@ import { useHeader } from 'contexts/Header';
 import { getCoinName, getMarketCharts, getTrending } from 'services/getCoin';
 
 export function useCoin() {
+  const navigate = useNavigate();
   const { id } = useParams();
   const name = id?.toLowerCase();
   const { currency } = useHeader();
@@ -32,9 +33,13 @@ export function useCoin() {
   }
 
   async function buscaCoin() {
-    const { data } = await getCoinName(name || '');
+    try {
+      const { data } = await getCoinName(name || '');
 
-    setCoin(data);
+      setCoin(data);
+    } catch (error) {
+      navigate('/404');
+    }
   }
 
   async function buscaTrending() {
