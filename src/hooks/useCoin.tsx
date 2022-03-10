@@ -20,6 +20,9 @@ export function useCoin() {
   const [isLoading, setIsLoading] = useState(false);
   const [days, setDays] = useState('1');
 
+  const [crypto, setCrypto] = useState(0);
+  const [gold, setGold] = useState(0);
+
   async function buscaCharts() {
     const { data } = await getMarketCharts(currency, name || '', days);
 
@@ -97,6 +100,26 @@ export function useCoin() {
     },
   };
 
+  function handleChangeCrypto(event: any) {
+    setCrypto(event.target.value);
+
+    if (currency === 'BRL') {
+      setGold(event.target.value * coin?.market_data?.current_price.brl);
+    } else {
+      setGold(event.target.value * coin?.market_data?.current_price.usd);
+    }
+  }
+
+  function handleChangeGold(event: any) {
+    setGold(event.target.value);
+
+    if (currency === 'BRL') {
+      setCrypto(event.target.value / coin?.market_data?.current_price.brl);
+    } else {
+      setCrypto(event.target.value / coin?.market_data?.current_price.usd);
+    }
+  }
+
   return {
     btc,
     coin,
@@ -112,5 +135,11 @@ export function useCoin() {
     buscaTrending,
     dataChart,
     optionsChart,
+    crypto,
+    gold,
+    setCrypto,
+    setGold,
+    handleChangeCrypto,
+    handleChangeGold,
   };
 }
