@@ -59,6 +59,9 @@ export function Coin() {
     optionsChart,
   } = useCoin();
 
+  const [crypto, setCrypto] = useState(0);
+  const [gold, setGold] = useState(0);
+
   useEffect(() => {
     setIsLoading(true);
     buscaBitcoin();
@@ -88,8 +91,10 @@ export function Coin() {
     setIsLoading(false);
   }, [currency, days]);
 
-  const [crypto, setCrypto] = useState(0);
-  const [gold, setGold] = useState(0);
+  useEffect(() => {
+    setCrypto(0);
+    setGold(0);
+  }, [currency]);
 
   function handleChangeCrypto(event: any) {
     setCrypto(event.target.value);
