@@ -7,8 +7,8 @@ export function usePagination() {
     initialState: { currentPage: 1, pageSize: 10 },
   });
 
-  const outerLimit = 2;
-  const innerLimit = 2;
+  const outerLimit = 1;
+  const innerLimit = 1;
 
   const baseStyles: ButtonProps = {
     w: 7,

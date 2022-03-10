@@ -16,8 +16,6 @@ import {
 import {
   Paginator,
   Container,
-  Previous,
-  Next,
   PageGroup,
   usePaginator,
 } from 'chakra-paginator';
@@ -239,6 +237,8 @@ export function Home() {
                   <Select
                     w={20}
                     ml={0}
+                    backgroundColor="gray.100"
+                    focusBorderColor="purple.600"
                     onChange={handlePageSizeChange}
                     color={theme === 'light' ? 'gray.700' : 'gray.500'}
                   >
@@ -246,9 +246,7 @@ export function Home() {
                     <option value="25">25</option>
                     <option value="50">50</option>
                   </Select>
-                  <Previous color="gray.600">Anterior</Previous>
                   <PageGroup isInline align="center" />
-                  <Next color="gray.600">Próximo</Next>
                 </Container>
               </Paginator>
             </div>
