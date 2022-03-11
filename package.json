@@ -11,6 +11,7 @@
     "@chakra-ui/icons": "^1.1.7",
     "@chakra-ui/react": "^1.8.6",
     "@choc-ui/chakra-autocomplete": "^4.18.1",
+    "@coingecko/cryptoformat": "^0.4.4",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "axios": "^0.24.0",
