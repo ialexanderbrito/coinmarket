@@ -6,7 +6,6 @@ import { Avatar, Button, Select, Text } from '@chakra-ui/react';
 import {
   AutoComplete,
   AutoCompleteInput,
-  AutoCompleteItem,
   AutoCompleteList,
 } from '@choc-ui/chakra-autocomplete';
 import logoImg from 'assets/logo.png';
@@ -32,6 +31,7 @@ export function Header() {
 
     setAllCoins(data.coins);
   }
+
   useEffect(() => {
     if (coinSelected !== '') {
       buscaCoinAll();
@@ -63,7 +63,9 @@ export function Header() {
                     marginLeft: '10px',
                   }}
                 >
-                  Nenhum resultado encontrado
+                  {allCoins.length === 0 &&
+                    coinSelected !== '' &&
+                    'Nenhum resultado encontrado'}
                 </Text>
               }
             >
@@ -78,21 +80,20 @@ export function Header() {
               />
               <AutoCompleteList>
                 {allCoins.map((coin: CryptoSearchResponse) => (
-                  <AutoCompleteItem
-                    key={`option-${coin.id}`}
-                    value={coin.name}
-                    textTransform="capitalize"
-                    align="center"
-                    onClick={() => {
-                      navigate(`/coin/${coin.id}`);
-                      window.location.reload();
-                    }}
-                  >
-                    <Avatar size="sm" name={coin.name} src={coin.thumb} />
-                    <Text ml="4" color="black">
-                      {coin.name} ({coin.symbol})
-                    </Text>
-                  </AutoCompleteItem>
+                  <>
+                    <div
+                      onClick={() => {
+                        navigate(`/coin/${coin.id}`);
+                        window.location.reload();
+                      }}
+                      className={styles.inputItem}
+                    >
+                      <Avatar size="sm" name={coin.name} src={coin.thumb} />
+                      <Text ml="4" color="black">
+                        {coin.name} ({coin.symbol})
+                      </Text>
+                    </div>
+                  </>
                 ))}
               </AutoCompleteList>
             </AutoComplete>

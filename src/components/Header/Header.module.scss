@@ -25,6 +25,14 @@
   height: 32px;
 }
 
+.inputItem {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
 strong {
   cursor: pointer;
   color: var(--text-primary);
