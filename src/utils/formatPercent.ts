@@ -1,3 +1,3 @@
 export function formatPercent2Decimal(value: number) {
-  return `${value?.toFixed(2)}%`;
+  return `${value?.toPrecision(3).replace('-', '')}%`;
 }
