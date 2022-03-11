@@ -13,6 +13,7 @@ import {
   CircularProgress,
   Select,
 } from '@chakra-ui/react';
+import { formatCurrency } from '@coingecko/cryptoformat';
 import {
   Paginator,
   Container,
@@ -31,9 +32,7 @@ import { useTheme } from 'contexts/Theme';
 import { useHome } from 'hooks/useHome';
 import { usePagination } from 'hooks/usePagination';
 
-import { formatBRL } from 'utils/formatBRL';
 import { formatPercent2Decimal } from 'utils/formatPercent';
-import { formatUSD } from 'utils/formatUSD';
 
 import { getCoinsMarkets } from 'services/getCoin';
 
@@ -177,9 +176,21 @@ export function Home() {
                       </Td>
                       <Td>
                         {currency === 'BRL' ? (
-                          <span>{formatBRL(coin.current_price)}</span>
+                          <span>
+                            {formatCurrency(
+                              Number(coin.current_price),
+                              'BRL',
+                              'pt-BR',
+                            )}
+                          </span>
                         ) : (
-                          <span>{formatUSD(coin.current_price)}</span>
+                          <span>
+                            {formatCurrency(
+                              Number(coin.current_price),
+                              'USD',
+                              'en',
+                            )}
+                          </span>
                         )}
                       </Td>
                       <Td
@@ -208,9 +219,21 @@ export function Home() {
                       </Td>
                       <Td>
                         {currency === 'BRL' ? (
-                          <span>{formatBRL(coin.market_cap)}</span>
+                          <span>
+                            {formatCurrency(
+                              Number(coin.market_cap),
+                              'BRL',
+                              'pt-BR',
+                            )}
+                          </span>
                         ) : (
-                          <span>{formatUSD(coin.market_cap)}</span>
+                          <span>
+                            {formatCurrency(
+                              Number(coin.market_cap),
+                              'USD',
+                              'en',
+                            )}
+                          </span>
                         )}
                       </Td>
                     </Tr>

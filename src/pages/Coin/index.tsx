@@ -19,6 +19,7 @@ import {
   Stat,
   StatNumber,
 } from '@chakra-ui/react';
+import { formatCurrency } from '@coingecko/cryptoformat';
 import brazilFlag from 'assets/brazil.png';
 import usaFlag from 'assets/usa.png';
 import cx from 'classnames';
@@ -33,9 +34,7 @@ import { useTheme } from 'contexts/Theme';
 import { useCoin } from 'hooks/useCoin';
 import { useSaved } from 'hooks/useSaved';
 
-import { formatBRL } from 'utils/formatBRL';
 import { formatPercent2Decimal } from 'utils/formatPercent';
-import { formatUSD } from 'utils/formatUSD';
 
 import styles from './Coin.module.scss';
 
@@ -149,9 +148,21 @@ export function Coin() {
 
               <div className={styles.infoPrice}>
                 {currency === 'BRL' ? (
-                  <h1>{formatBRL(coin?.market_data?.current_price.brl)}</h1>
+                  <h1>
+                    {formatCurrency(
+                      Number(coin?.market_data?.current_price.brl),
+                      'BRL',
+                      'pt-BR',
+                    )}
+                  </h1>
                 ) : (
-                  <h1>{formatUSD(coin?.market_data?.current_price.usd)}</h1>
+                  <h1>
+                    {formatCurrency(
+                      Number(coin?.market_data?.current_price.usd),
+                      'USD',
+                      'en',
+                    )}
+                  </h1>
                 )}
                 <div
                   className={cx(styles.percentage, {
@@ -313,16 +324,24 @@ export function Coin() {
                       <StatNumber>
                         {currency === 'BRL' ? (
                           <>
-                            {formatBRL(
-                              trend?.item.price_btc *
-                                btc?.market_data?.current_price.brl,
+                            {formatCurrency(
+                              Number(
+                                trend?.item.price_btc *
+                                  btc?.market_data?.current_price.brl,
+                              ),
+                              'BRL',
+                              'pt-BR',
                             )}
                           </>
                         ) : (
                           <>
-                            {formatUSD(
-                              trend?.item.price_btc *
-                                btc?.market_data?.current_price.usd,
+                            {formatCurrency(
+                              Number(
+                                trend?.item.price_btc *
+                                  btc?.market_data?.current_price.usd,
+                              ),
+                              'USD',
+                              'en',
                             )}
                           </>
                         )}
